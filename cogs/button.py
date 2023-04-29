@@ -10,7 +10,7 @@ class menu(discord.ui.View):
         super().__init__()
         self.value = None   
 
-    @discord.ui.button(label="zest", style=discord.ButtonStyle.blurple)
+    @discord.ui.button(label="HMMM", style=discord.ButtonStyle.blurple)
     async def menu(self, interaction: discord.Interaction, button: discord.ui.Button):
         await interaction.response.send_message("This reminder has already been confirmed", ephemeral=True)
         self.value = True
