@@ -40,10 +40,10 @@ async def on_ready():
 
 
 async def load():
-    for filename in os.listdir("./cogs"):
+    for filename in os.listdir("./commands"):
         if filename.endswith(".py"):
-            await client.load_extension(f"cogs.{filename[:-3]}")
-            print(f"Officially loaded! {filename}")
+            await client.load_extension(f"commands.{filename[:-3]}")
+            print(f"Officially loaded {filename}")
 
 
 async def main():
