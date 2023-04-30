@@ -43,7 +43,7 @@ async def load():
     for filename in os.listdir("./cogs"):
         if filename.endswith(".py"):
             await client.load_extension(f"cogs.{filename[:-3]}")
-            print(f"Officially loaded {filename}")
+            print(f"Officially loaded! {filename}")
 
 
 async def main():
