@@ -35,16 +35,16 @@ async def on_ready():
     print(f"{prfx} Succesfully logged in as APD {Fore.CYAN}")
     activity = discord.Activity(type=discord.ActivityType.listening, name=f"main.py")
     await client.change_presence(activity=activity)
-    await client.tree.sync()
+    await client.tree.sync() 
 
 
 
 async def load():
-    for folder in ["commands", "roblox_commands"]:
+    for folder in ["commands", "roblox commands"]:
         for filename in os.listdir(f"./{folder}"):
             if filename.endswith(".py"):
                 await client.load_extension(f"{folder}.{filename[:-3]}")
-                print(f"Officially loaded! {filename}")
+                print(f"{filename} loaded from {folder} folder.")
 
 
 async def main():

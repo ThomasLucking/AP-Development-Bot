@@ -1,3 +1,4 @@
+import os
 import discord
 import requests
 import json
@@ -16,8 +17,14 @@ class userinfo(commands.Cog):
     @app_commands.command(description="Roblox's User information")
     async def whois(self,interaction: discord.Interaction, user_id: int):
 
-        with open("roblox.json", "r") as f:
-            roblox_data = json.load(f)
+        print("Loading Roblox data from file...")
+        try:
+            file_path = "./data/roblox.json"
+            with open(file_path, "r") as f:
+                roblox_data = json.load(f)
+            print("Roblox data loaded.")
+        except Exception as e:
+            print(f"Error loading Roblox data: {e}")
 
         endpoints = roblox_data["endpoints"]
         fields = roblox_data["fields"]
@@ -41,7 +48,7 @@ class userinfo(commands.Cog):
                 
         # get user profile image by id
         profile_info = requests.get(endpoints["profile_info"].format(user_id=user_id)).json()
-        profile_image = profile_info[fields["profile_image"][0]][fields["profile_image"][1]][fields["profile_image"][2]]
+        profile_image = profile_info[fields["profile_image"][0]] [fields["profile_image"][1]][fields["profile_image"][2]]
 
         embed = discord.Embed(title=f"{display_name}", url=f"https://www.roblox.com/users/{user_id}/profile", color=0x00b3ff)
         embed.set_author(name="Roblox user")
