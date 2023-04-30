@@ -40,10 +40,11 @@ async def on_ready():
 
 
 async def load():
-    for filename in os.listdir("./commands"):
-        if filename.endswith(".py"):
-            await client.load_extension(f"commands.{filename[:-3]}")
-            print(f"Officially loaded {filename}")
+    for folder in ["commands", "roblox_commands"]:
+        for filename in os.listdir(f"./{folder}"):
+            if filename.endswith(".py"):
+                await client.load_extension(f"{folder}.{filename[:-3]}")
+                print(f"Officially loaded! {filename}")
 
 
 async def main():
