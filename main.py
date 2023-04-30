@@ -52,6 +52,4 @@ async def main():
         await client.start(DISCORD_TOKEN)
 
 
-
-
 asyncio.run(main())

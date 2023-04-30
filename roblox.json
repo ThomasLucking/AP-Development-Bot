@@ -1,0 +1,15 @@
+{
+    "endpoints": {
+      "user_info": "https://users.roblox.com/v1/users/{user_id}",
+      "display_info": "https://users.roblox.com/v1/users/{user_id}",
+      "created_info": "https://users.roblox.com/v1/users/{user_id}",
+      "desc_info": "https://users.roblox.com/v1/users/{user_id}",
+      "profile_info": "https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds={user_id}&size=100x100&format=Png&isCircular=false"
+    },
+    "fields": {
+      "display_name": ["displayName"],
+      "account_created": ["created"],
+      "user_desc": ["description", "No description available"],
+      "profile_image": ["data", 0, "imageUrl"]
+    }
+  }
