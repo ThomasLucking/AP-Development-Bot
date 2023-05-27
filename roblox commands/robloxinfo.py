@@ -85,6 +85,7 @@ class userinfo(commands.Cog):
         #embed.add_field(name="Description", value=f"{i[0]}", inline=False)
 
         embed.set_thumbnail(url=f"{profile_image}")
+        
 
 
         await interaction.response.send_message(embed=embed)

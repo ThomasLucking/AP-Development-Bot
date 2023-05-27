@@ -8,25 +8,26 @@ class info(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print(".py is Ready!")
+        print("user information.py is Ready!")
     
 
-    @app_commands.command()
-    async def info(interaction: discord.Interaction, Username: str):
-        embed = discord.Embed(title="User Information", description=f"""
-        **Username:** {interaction.user}
-        **Display name:** {Username.display_name}
-        **Mention :** {Username.mention}
+    @app_commands.command(description="Shows User information")
+    async def discorduserinfo(self, interaction: discord.Interaction, user: discord.Member):
+         embed1 = discord.Embed(title="User Information", description=f"""
+         **Username:** {user}
+         **Display name:** {user.display_name}
+         **Mention :** {user.mention}
 
-        Joined at: {Username.joined_at}
-        Account Created: {Username.created_at}
+         **Joined at:** {user.joined_at}
+         **Account Created:** {user.created_at}
 
-        **Roles :** {Username.roles}
+         **Roles :** {user.mention.roles}
+
+         """)
+         embed1.set_footer(text=f"{user.id}")
 
 
-
-        
-        """)
+         await interaction.response.send_message(embed=embed1)
 
 async def setup(client):
     await client.add_cog(info(client))
