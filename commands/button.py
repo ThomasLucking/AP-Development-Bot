@@ -37,6 +37,7 @@ class Button(commands.Cog):
             View = menu()
             idk = await ctx.send(embed=embedV10, view=View)
             await View.wait()
+            
             if View.value:
                 embed = discord.Embed(
                     title="Sent",

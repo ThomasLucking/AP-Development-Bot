@@ -1,4 +1,5 @@
 import discord
+import datetime
 from discord.ext import commands
 
 
@@ -41,7 +42,7 @@ class moderation(commands.Cog):
     @commands.command(description="Bans a member")
     @commands.has_any_role("Staff", "Bot Dev", "Owner", "Administrator")
     @commands.has_permissions(ban_members = True)
-    async def kick(self, ctx, member: discord.Member, *, reason=""):
+    async def ban(self, ctx, member: discord.Member, *, reason=""):
         if reason == "":
             await member.ban(reason=reason)
             await ctx.send(f"<:check:1096065955819421836> **{member}** has been Banned for **reason unspecified**.")
@@ -61,6 +62,17 @@ class moderation(commands.Cog):
             await member.kick(reason=reason)
             await ctx.send(f"<:check:1096065955819421836> **{member}** has been Banned for **{reason}**.")
         await ctx.message.delete()
+
+
+    
+
+
+
+
+
+
+
+
         
 
 
