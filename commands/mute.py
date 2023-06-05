@@ -10,7 +10,7 @@ class mute(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("file.py is Ready!")
+        print("mute.py is Ready!")
     
 
     @app_commands.command(description="Mutes a member")

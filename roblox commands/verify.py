@@ -59,7 +59,7 @@ class Verify(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("robloxinfo.py is Ready!")
+        print("verify.py is Ready!")
 
     @app_commands.command()
     async def verify(self, interaction: discord.Interaction):

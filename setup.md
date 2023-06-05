@@ -15,7 +15,7 @@ class slash_command_name(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("file.py is Ready!")
+        print(".py is Ready!")
     
 
     @app_commands.command(description="A random number generator")
