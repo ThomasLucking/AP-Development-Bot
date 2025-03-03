@@ -18,7 +18,6 @@ class MyModal(ui.Modal, title="embed builder"):
     
 
 
-
 class embed_builder(commands.Cog):
     def __init__(self, client):
         self.client = client

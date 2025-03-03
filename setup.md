@@ -29,6 +29,8 @@ async def setup(client):
 
 
 *Normal command setup*
+import discord
+from discord.ext import commands
 class Normal_command_name(commands.Cog):
     def __init__(self, client):
         self.client = client

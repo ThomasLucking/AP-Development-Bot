@@ -39,8 +39,9 @@ async def on_ready():
 
 
 
+
 async def load():
-    for folder in ["commands", "roblox commands"]:
+    for folder in ["commands", "roblox commands", "PScommands"]:
         for filename in os.listdir(f"./{folder}"):
             if filename.endswith(".py"):
                 await client.load_extension(f"{folder}.{filename[:-3]}")
@@ -54,3 +55,6 @@ async def main():
 
 
 asyncio.run(main())
+
+
+
