@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class Normal_command_name(commands.Cog):
+class idk(commands.Cog):
     def __init__(self, client):
         self.client = client
 
@@ -35,4 +35,4 @@ class Normal_command_name(commands.Cog):
 
 
 async def setup(client):
-    await client.add_cog(Normal_command_name(client))
+    await client.add_cog(idk(client))
