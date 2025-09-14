@@ -15,10 +15,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
-DISCORD_PREFIX = os.getenv("DISCORD_PREFIX")
+# DISCORD_PREFIX = os.getenv("DISCORD_PREFIX")
 
 intents = discord.Intents.all()
-client = commands.Bot(command_prefix=DISCORD_PREFIX, intents=intents)
+client = commands.Bot(command_prefix="!", intents=intents)
 
 
 
